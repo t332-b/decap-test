@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: t332-b/astro-test
+  branch: main
+  base_url: http://localhost:4321
+  auth_endpoint: auth
+
+# ローカル開発用の設定（本番環境では削除）
+local_backend: true
+
+# サイト設定
+site_url: http://localhost:4321
+display_url: http://localhost:4321
+
+# メディア設定
+media_folder: "public/images/uploads"
+
+# コレクション設定
+collections:
+  - name: "blog"
+    label: "ブログ記事"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "レイアウト", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "タイトル", name: "title", widget: "string", required: true }
+      - { label: "公開日", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: true }
+      - { label: "サムネイル画像", name: "thumbnail", widget: "image", required: false }
+      - { label: "評価（1-5）", name: "rating", widget: "number", min: 1, max: 5, value_type: "int", required: false }
+      - { label: "概要", name: "description", widget: "text", required: false, hint: "記事の簡単な説明を入力してください" }
+      - { label: "タグ", name: "tags", widget: "list", required: false, hint: "記事に関連するタグを入力してください" }
+      - { label: "本文", name: "body", widget: "markdown", required: true, hint: "記事の本文をMarkdownで記述してください" }

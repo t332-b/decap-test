@@ -13,6 +13,7 @@
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.5.1",
     "astro": "^5.13.4",
+    "decap-cms-app": "^3.8.3",
     "sharp": "^0.34.2"
   }
 }
