@@ -19,7 +19,11 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
     const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=repo`;
     
     console.log('Redirecting to GitHub OAuth:', githubAuthUrl);
-    return redirect(githubAuthUrl);
+    // 認証確認ページにリダイレクト（一時的）
+    return new Response('認証成功！<a href="/admin">管理画面へ</a>', {
+      headers: { 'Content-Type': 'text/html; charset=utf-8' }
+    });
+    // return redirect(githubAuthUrl);
   }
 
   try {

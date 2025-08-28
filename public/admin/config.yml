@@ -5,8 +5,8 @@ backend:
   base_url: http://localhost:4321
   auth_endpoint: auth
 
-# ローカル開発用の設定（本番環境では削除）
-local_backend: true
+# # ローカル開発用の設定（本番環境では削除）
+# local_backend: true
 
 # サイト設定
 site_url: http://localhost:4321
